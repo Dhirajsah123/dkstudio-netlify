@@ -1,127 +1,66 @@
-# CW3D Dapp Boilerplate For Netlify
+# CashMitra - Earning Platform Website
 
-This boilerplate is set up to be deployed on Netlify and you can directly deploy this project by clicking the button below:
+CashMitra is a modern, responsive, and secure earning platform website built with PHP, MySQL, HTML, CSS, and JavaScript. It allows users to earn money by completing offers, watching ads, and referring friends. The project includes a user-facing website and a comprehensive admin panel for management.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/alchemyplatform/netlify-alchemy-dapp-boilerplates)
+**Developer:** Dhiraj SAH
 
-Visit the [Live Demo here](https://alchemy-cw3d-dapp-boilerplate.netlify.app/)
+## Features
 
-## Resources
-Please refer to CW3D's documentation and the following useful links for an in depth explanation of how to work with projects bootstrapped with CW3D:
+### User-Facing Features
+- **Modern UI/UX:** A futuristic, responsive design built with Bootstrap 5.
+- **User Authentication:** Secure registration, login, and password reset functionality.
+- **Dashboard:** A user-friendly dashboard showing earnings, recent activity, and referral stats.
+- **Offerwalls:** A dedicated page to browse and complete offers from various providers.
+- **Ad Viewing:** Users can watch ads to earn points.
+- **Referral System:** Users get a unique referral link to invite friends and earn commissions.
+- **Withdrawal System:** Users can request withdrawals of their earnings.
+- **Notifications:** Toast notifications for a better user experience.
+- **Security:** CSRF protection, password hashing, and rate limiting are implemented.
+- **Performance:** Minified CSS/JS and lazy-loaded images for a fast experience.
 
--   [Docs](https://docs.alchemy.com/docs/create-web3-dapp) - Everything you need to know when using CW3D
--   [GitHub](https://github.com/alchemyplatform/create-web3-dapp) - look at the extensive code example or start contributing
--   [Website](https://createweb3dapp.alchemy.com) - Learn more about CW3D and add components to your project
--   [Templates](https://createweb3dapp.alchemy.com/#templates) - Check out the pre-built project templates
--   [Components Library](https://createweb3dapp.alchemy.com/#components) - Add features directly to your project through components
--   [Examples](https://github.com/alchemyplatform/create-web3-dapp-examples) - See the components implemented in a real world dapp
--   [Community](https://t.me/createweb3dapp) - Meet other builders, get support, and give feedback!
+### Admin Panel Features
+- **Secure Login:** A separate, secure login for administrators.
+- **Dashboard:** An overview of site statistics.
+- **User Management:** View, edit, and delete users.
+- **Offer Management:** Add, edit, and delete offers.
+- **Ad Management:** Add, edit, and delete ads.
+- **Withdrawal Management:** Approve or reject withdrawal requests.
+- **Fraud Prevention:** Basic IP tracking to identify potential duplicate accounts.
 
-## Overview
+## How to Set Up on XAMPP/WAMP
 
-This project serves as a boilerplate for creating decentralized applications (dApps) using [Create Web3 Dapp](https://github.com/alchemyplatform/create-web3-dapp). It is preconfigured to be deployed on [Netlify](https://www.netlify.com/), providing you with a seamless way to get your dApp up and running in no time.
+1.  **Download and Install XAMPP/WAMP:**
+    *   Download and install [XAMPP](https://www.apachefriends.org/index.html) or [WAMP](https://www.wampserver.com/en/).
 
-This boilerplate is built using [CW3D (Create Web3 Dapp)](https://github.com/alchemyplatform/create-web3-dapp), a powerful tool developed by [Alchemy](https://www.alchemy.com/) that allows developers to rapidly create and deploy dApps.
+2.  **Clone the Repository:**
+    *   Clone this repository into the `htdocs` folder of your XAMPP installation (e.g., `C:\xampp\htdocs\cashmitra`) or the `www` folder for WAMP.
 
-## What's Included?
+3.  **Start Apache and MySQL:**
+    *   Open the XAMPP/WAMP control panel and start the Apache and MySQL services.
 
-This boilerplate has everything you need to start building a dapp:
+4.  **Create the Database:**
+    *   Open your web browser and go to `http://localhost/phpmyadmin`.
+    *   Create a new database named `cashmitra`.
+    *   Select the `cashmitra` database, go to the "Import" tab, and choose the `sql/database.sql` file from the project directory to import the database schema and sample data.
 
-- Next.js
-- Wagmi Hooks
-- Ethers.js
-- Rainbowkit
-- Alchemy SDK
+5.  **Configure the Application:**
+    *   Open the `php/core/config.php` file.
+    *   Make sure the `DB_USER`, `DB_PASS`, and `DB_NAME` constants match your database configuration. By default, the username is `root` and the password is an empty string for XAMPP.
+    *   Update the `BASE_URL` constant to match your project's URL (e.g., `http://localhost/cashmitra`).
 
-## Supported Chains
+6.  **Run the Application:**
+    *   You can now access the website by navigating to `http://localhost/cashmitra` in your web browser.
 
-The project supports all the major EVM chains:
+## Admin Panel
 
- - Ethereum
- - Polygon
- - Polygon zkEVM
- - Arbitrum
- - Optimism
+-   **URL:** `http://localhost/cashmitra/admin`
+-   **Default Username:** `admin`
+-   **Default Password:** The default password is 'admin'. The `database.sql` file contains the hashed version of this password.
 
-## Getting Started
+## Notes
 
-### Prerequisites
+-   **Email Verification:** Email verification is simulated by logging the verification links to a file named `verification_links.log` in the `php/controllers` directory. In a production environment, you would integrate a proper email sending library like PHPMailer.
+-   **Image Assets:** The offerwall provider logos are referenced in the code but are not included in the repository. You will need to add the images to the `public/images/offerwalls` directory for them to display correctly.
 
-To get started with this boilerplate, you'll need to have the following software installed on your local machine:
-
-- [Node.js](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/)
-- [Git](https://git-scm.com/)
-
-### Installation
-
-1. Clone the repository to your local machine:
-   ```
-   git clone https://github.com/alchemyplatform/netlify-alchemy-dapp-boilerplates.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd netlify-alchemy-dapp-boilerplates
-   ```
-3. Install the required dependencies:
-   ```
-   yarn install
-   ```
-
-### Running the Project
-
-1. Start the local development server:
-   ```
-   yarn run dev
-   ```
-2. Open your browser and navigate to [`http://localhost:3000/`](http://localhost:3000/) to view the dApp in action.
-
-### Deploying to Netlify
-
-This boilerplate is set up to be deployed on Netlify and you can directly deploy this project by clicking the button below:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/alchemyplatform/netlify-alchemy-dapp-boilerplates)
-
- If you prefer to deploy it manually, you can follow these steps:
-
-1. Sign up for a Netlify account at [netlify.com](https://www.netlify.com/) if you don't already have one.
-2. Install the Netlify CLI:
-   ```
-   npm install -g netlify-cli
-   ```
-3. Run the following command to deploy your dApp to Netlify:
-   ```
-   netlify deploy
-   ```
-4. Follow the prompts and provide the required information. Your dApp will be deployed and accessible via a unique URL.
-
-## Project Structure
-
-The boilerplate project is a Next.js application with the following structure:
-
-```
-📦root
- ┣ 📂components
- ┃ ┣ 📂navigation
- ┃ ┃ ┗ 📜navbar.jsx
- ┃ ┗ 📜InstructionsComponent.jsx
- ┣ 📂layout
- ┃ ┗ 📜mainLayout.jsx
- ┣ 📂pages
- ┃ ┣ 📜_app.js
- ┃ ┗ 📜index.jsx
- ┣ 📂public
- ┃ ┗ 📜cw3d-logo.png
- ┣ 📂styles
- ┃ ┣ 📜Home.module.css
- ┃ ┣ 📜InstructionsComponent.module.css
- ┃ ┣ 📜Navbar.module.css
- ┃ ┗ 📜globals.css
- ┣ 📜.gitignore
- ┣ 📜README.md
- ┣ 📜next.config.js
- ┣ 📜package-lock.json
- ┗ 📜package.json
-```
-
-Start editing the `pages/index.jsx` file to customize the project according to your own needs!
+---
+Developed by Dhiraj SAH.
