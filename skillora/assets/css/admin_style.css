@@ -1,0 +1,158 @@
+/* skillora/assets/css/admin_style.css */
+
+.admin-body {
+    background-color: #f0f2f5; /* Light grey background for the admin area */
+    color: #333;
+}
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.admin-sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Dark blue/grey */
+    color: #ecf0f1; /* Light text */
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #34495e;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    color: #fff;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allows logout link to be pushed to the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: background-color 0.2s ease-in-out;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav ul li a:hover {
+    background-color: #34495e;
+}
+
+.sidebar-nav ul li.active a {
+    background-color: #22303f;
+    border-left-color: var(--primary-color);
+    color: #fff;
+}
+
+.sidebar-nav .logout-link {
+    margin-top: auto; /* Pushes logout to the bottom */
+}
+
+/* --- Main Content --- */
+.admin-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-main-header {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: right;
+}
+
+.admin-content-area {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.admin-content-area h1 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+hr {
+    display: none; /* We will use borders on h1 instead */
+}
+
+/* --- Tables --- */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.admin-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.admin-table .actions a {
+    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.actions .btn-approve {
+    background-color: #27ae60; /* Green */
+}
+.actions .btn-approve:hover {
+    background-color: #229954;
+}
+
+.actions .btn-reject,
+.actions .btn-delete {
+    background-color: #e74c3c; /* Red */
+}
+.actions .btn-reject:hover,
+.actions .btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.actions .btn-edit {
+    background-color: #3498db; /* Blue */
+}
+.actions .btn-edit:hover {
+    background-color: #2980b9;
+}
